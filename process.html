@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Processus • IDCARS</title>
+  <meta name="theme-color" content="#D6FF00" />
+  <meta name="description" content="IDCARS : service clé en main 100% gratuit pour vendre votre voiture. Nous gérons annonce, appels, visites, négociation." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preload" as="image" href="assets/logo.png" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav__row">
+    <a class="brand" href="index.html">
+      <span class="chip" aria-hidden="true"></span>
+      <span>IDCARS</span>
+    </a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a data-nav href="index.html">Accueil</a>
+      <a data-nav href="pourquoi.html">Pourquoi</a>
+      <a data-nav href="process.html">Process</a>
+      <a data-nav href="about.html">À propos</a>
+      <a data-nav href="contact.html" class="btn btn-primary">Contact</a>
+    </nav>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div id="mobileMenu" class="container" style="display:none">
+    <a href="index.html">Accueil</a>
+    <a href="pourquoi.html">Pourquoi</a>
+    <a href="process.html">Process</a>
+    <a href="about.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Comment ça <span class="accent">marche</span> ?</h1>
+    <p class="sub">Un parcours clair en 4 étapes.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <div class="card"><div class="h3">1) Prise de contact</div><p>On échange sur le véhicule, vos attentes et vos délais.</p></div>
+    <div class="card"><div class="h3">2) Shooting & annonce pro</div><p>Photos soignées, description claire et mise en valeur.</p></div>
+    <div class="card"><div class="h3">3) Contacts & visites</div><p>On filtre les acheteurs, gère appels/messages et organise les rendez-vous.</p></div>
+    <div class="card"><div class="h3">4) Négociation & accord final</div><p>On vise le meilleur prix. Vous gardez toujours le dernier mot.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span class="chip" aria-hidden="true" style="width:30px;height:30px"></span>
+      <strong>IDCARS</strong>
+    </div>
+    <small class="muted">© <span id="year"></span> IDCARS — Service de vente automobile clé en main.</small>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</footer>
+
+</body>
+</html>

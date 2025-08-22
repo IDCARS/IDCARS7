@@ -1,0 +1,57 @@
+
+/* ====== IDCARS — Design marketing (responsive) ====== */
+:root {
+  --bg:#000; --text:#F5F5F5; --muted:#B6B6B6; --accent:#D6FF00;
+  --card:#0C0C0C; --card2:#111; --ring:rgba(214,255,0,.35);
+}
+*{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);
+font-family: Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; line-height:1.6}
+a{color:var(--text);text-decoration:none} img{max-width:100%;height:auto}
+.container{width:min(1120px,92vw);margin:auto} .grid{display:grid;gap:20px}
+
+header.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.85);
+backdrop-filter: blur(8px); border-bottom:1px solid #121212}
+.nav__row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.3px}
+.brand .chip{width:40px;height:40px;border-radius:10px;
+background: radial-gradient(120% 120% at 20% 20%, var(--accent) 0, #95d600 45%, #1a1a1a 46%, #0d0d0d 100%);
+box-shadow:0 0 0 3px #111, 0 0 36px rgba(214,255,0,.28);}
+.nav__links{display:flex;align-items:center;gap:16px;font-weight:700}
+.nav__links a:hover,.nav__links a.active{color:var(--accent)}
+.burger{display:none;background:#0d0d0d;border:1px solid #222;color:var(--text);
+padding:10px 12px;border-radius:12px}
+@media (max-width:860px){
+  .nav__links{display:none} .burger{display:inline-block}
+  #mobileMenu{display:none;flex-direction:column;gap:10px;padding:8px 0 14px}
+  #mobileMenu a{padding:10px 0}
+}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;
+border:1px solid #1c1c1c;background:#0a0a0a;color:var(--text);transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-1px);border-color:#272727}
+.btn-primary{background:var(--accent);color:#111;border-color:transparent;box-shadow:0 0 0 6px var(--ring)}
+.btn-outline{background:transparent;border-color:var(--accent);color:var(--accent)}
+
+.hero{padding:64px 0;background:
+  radial-gradient(900px 520px at 20% -10%, rgba(214,255,0,.10), transparent),
+  radial-gradient(800px 420px at 80% -20%, rgba(214,255,0,.10), transparent)}
+.hero h1{font-size: clamp(28px, 4.5vw, 42px); line-height:1.06; margin: 10px 0 8px; font-weight:900}
+.accent{color:var(--accent)} .sub{color:var(--muted)}
+
+.section{padding:56px 0; border-top:1px solid #111}
+.card{background:var(--card);border:1px solid #151515;border-radius:16px;padding:18px}
+.h2{font-size: clamp(22px, 3.2vw, 32px); margin:0 0 8px; font-weight:900}
+.h3{font-size:18px; margin:0 0 6px; font-weight:800}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.kpi{background:#0b0b0b;border:1px solid #161616;border-radius:14px;padding:14px}
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+@media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+
+footer{padding:36px 0; border-top:1px solid #111; color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px dashed #2a2a2a;border-radius:999px;padding:6px 10px}
+
+/* Forms */
+form{display:grid;gap:12px; max-width:680px}
+input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #1a1a1a;background:#0a0a0a;color:var(--text)}
+input:focus,textarea:focus{outline:2px solid var(--ring); border-color:#2a2a2a}
+small.muted{color:var(--muted)}
