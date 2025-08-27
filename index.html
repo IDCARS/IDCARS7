@@ -1,86 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accueil • IDCARS</title>
-  <meta name="theme-color" content="#D6FF00" />
-  <meta name="description" content="IDCARS : service clé en main 100% gratuit pour vendre votre voiture. Nous gérons annonce, appels, visites, négociation." />
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="preload" as="image" href="assets/logo.png" />
-  <script defer src="assets/script.js"></script>
+  <title>ID cars — Accueil</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="container nav__row">
-    <a class="brand" href="index.html">
-      <span class="chip" aria-hidden="true"></span>
-      <span>IDCARS</span>
-    </a>
-    <nav class="nav__links" aria-label="Navigation principale">
-      <a data-nav href="index.html">Accueil</a>
-      <a data-nav href="pourquoi.html">Pourquoi</a>
-      <a data-nav href="process.html">Process</a>
-      <a data-nav href="about.html">À propos</a>
-      <a data-nav href="contact.html" class="btn btn-primary">Contact</a>
-    </nav>
-    <button class="burger" onclick="toggleMenu()">☰</button>
-  </div>
-  <div id="mobileMenu" class="container" style="display:none">
-    <a href="index.html">Accueil</a>
-    <a href="pourquoi.html">Pourquoi</a>
-    <a href="process.html">Process</a>
-    <a href="about.html">À propos</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.png" alt="ID cars" />
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="annonces.html">Annonces</a>
+        <a href="avis.html">Avis</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="container grid-2">
-    <div>
-      <span class="badge"><span style="width:10px;height:10px;background:var(--accent);border-radius:50%"></span> Service 100% gratuit pour le vendeur</span>
-      <h1>Vendez votre voiture <span class="accent">sans stress</span>.</h1>
-      <p class="sub">Annonces pro, gestion des contacts, visites et négociation. Vous gardez <b>100%</b> du prix final.</p>
-      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
-        <a class="btn btn-primary" href="contact.html">Je lance ma vente</a>
-        <a class="btn btn-outline" href="process.html">Voir le process</a>
+  <main class="container">
+    <section class="hero">
+      <div class="hero__text">
+        <h1>Vends ta voiture <span class="accent">sans stress</span></h1>
+        <p>On centralise annonces, visites et négociation. Vous gardez <strong>100% du prix</strong>.</p>
+        <div class="cta">
+          <a class="btn btn--primary" href="annonces.html">Publier une annonce</a>
+          <a class="btn btn--ghost" href="avis.html">Laisser un avis</a>
+        </div>
       </div>
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
-        <div class="kpi"><div class="h3 accent">0 €</div><small class="muted">Frais vendeur</small></div>
-        <div class="kpi"><div class="h3">Clé en main</div><small class="muted">De A à Z</small></div>
-        <div class="kpi"><div class="h3">Humain</div><small class="muted">Accompagnement perso</small></div>
+      <div class="hero__media card">
+        <img src="assets/img/logo.png" alt="ID cars hero" />
       </div>
-    </div>
-    <div class="card">
-      <div class="h3">Étudiant passionné d’automobile</div>
-      <p class="sub">Un interlocuteur unique, disponible et à l’écoute.</p>
-      <img src="assets/logo.png" alt="Logo IDCARS" style="border-radius:14px;border:1px solid #1a1a1a; margin-top:10px">
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section">
-  <div class="container">
-    <div class="h2">Pourquoi choisir <span class="accent">IDCARS</span> ?</div>
-    <div class="list" style="margin-top:10px">
-      <div class="card"><div class="h3">100 % gratuit pour le vendeur</div><p>Pas de commission. Vous conservez l’intégralité du prix de vente.</p></div>
-      <div class="card"><div class="h3">On gère tout, de A à Z</div><p>Annonce pro, photos, messages, filtrage acheteurs, visites, négociation.</p></div>
-      <div class="card"><div class="h3">Transparence totale</div><p>Vous gardez le dernier mot. Aucune vente sans votre accord.</p></div>
-      <div class="card"><div class="h3">Service humain & personnalisé</div><p>Pas une plateforme froide : un accompagnement individuel, à l’écoute.</p></div>
-    </div>
-  </div>
-</section>
+    <section class="section-head">
+      <h2>Dernières annonces</h2>
+      <a class="link" href="annonces.html">Voir toutes →</a>
+    </section>
+    <div id="annonces-list" class="grid"></div>
 
-<footer>
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div style="display:flex;align-items:center;gap:10px">
-      <span class="chip" aria-hidden="true" style="width:30px;height:30px"></span>
-      <strong>IDCARS</strong>
-    </div>
-    <small class="muted">© <span id="year"></span> IDCARS — Service de vente automobile clé en main.</small>
-  </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</footer>
+    <section class="features">
+      <article class="tile">
+        <h3>Clé en main</h3>
+        <p>On s'occupe du tri, des appels et des visites.</p>
+      </article>
+      <article class="tile">
+        <h3>Humain</h3>
+        <p>Un interlocuteur unique, dispo et à l'écoute.</p>
+      </article>
+      <article class="tile">
+        <h3>Gratuit</h3>
+        <p>Hébergement GitHub Pages et base Firebase : 0€.</p>
+      </article>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <div class="container">
+      © {"{"}new Date().getFullYear(){"}"} ID cars — Tous droits réservés.
+    </div>
+  </footer>
+
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script type="module" src="assets/js/annonces.js"></script>
 </body>
 </html>

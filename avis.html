@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ID cars — Avis</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="ID cars" /></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="annonces.html">Annonces</a>
+        <a href="avis.html" class="active">Avis</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Laisser un avis</h1>
+      <form id="avis-form" class="form">
+        <input id="nom" placeholder="Votre prénom *" required />
+        <select id="note" required>
+          <option value="">Note *</option>
+          <option value="1">⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+        <textarea id="commentaire" placeholder="Votre avis *" required></textarea>
+        <button class="btn btn--primary" type="submit">Envoyer</button>
+      </form>
+      <div id="avis-status" class="status"></div>
+    </section>
+
+    <section class="section-head">
+      <h2>Avis des clients</h2>
+      <div id="moyenne-note" class="rating"></div>
+    </section>
+    <div id="avis-list" class="list"></div>
+  </main>
+
+  <footer class="footer"><div class="container">ID cars — Avis</div></footer>
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script type="module" src="assets/js/avis.js"></script>
+</body>
+</html>

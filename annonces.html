@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ID cars — Annonces</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html"><img src="assets/img/logo.png" alt="ID cars" /></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="annonces.html" class="active">Annonces</a>
+        <a href="avis.html">Avis</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Publier une annonce</h1>
+      <form id="annonce-form" class="form">
+        <input id="titre" placeholder="Titre de l'annonce *" required />
+        <input id="prix" type="number" min="0" step="1" placeholder="Prix (€) *" required />
+        <input id="contact" placeholder="Contact (téléphone / email) *" required />
+        <textarea id="description" placeholder="Description (kilométrage, état, options…) *" required></textarea>
+        <input id="photo" type="file" accept="image/*" required />
+        <button class="btn btn--primary" type="submit">Publier</button>
+        <p class="hint">Formats acceptés : JPG/PNG/WebP — 5 Mo max.</p>
+      </form>
+      <div id="form-status" class="status"></div>
+    </section>
+
+    <section class="section-head">
+      <h2>Toutes les annonces</h2>
+      <div class="filters">
+        <input id="search" placeholder="Rechercher un titre…" />
+        <select id="sort">
+          <option value="date_desc">Plus récentes</option>
+          <option value="price_asc">Prix croissant</option>
+          <option value="price_desc">Prix décroissant</option>
+        </select>
+      </div>
+    </section>
+    <div id="annonces-list" class="grid"></div>
+  </main>
+
+  <footer class="footer"><div class="container">ID cars — Annonces</div></footer>
+  <script type="module" src="assets/js/firebase-config.js"></script>
+  <script type="module" src="assets/js/annonces.js"></script>
+</body>
+</html>
